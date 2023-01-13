@@ -1,0 +1,16 @@
+,Rank,Nom,Equipe,Poste,Pass_accuracy,Pass_attempted,Pass_completed,Cross_accuracy,Cross_attempted,Cross_completed,Freekick,Match_played
+0,01,Vitor_Hugo,Trabzonspor,Defender,97.4,215,207,0,0,0,5,5
+1,02,Rui_Silva,Betis,Goalkeeper,97,29,28,0,0,0,0,1
+2,03,Teze,PSV,Defender,96.5,181,174,0,1,0,4,6
+3,03,Casale,Lazio,Defender,96.5,89,83,0,0,0,3,2
+4,05,Lindelöf,Man_United,Defender,96.4,320,309,0,0,0,5,5
+5,06,Pezzella,Betis,Defender,96.3,127,121,0,0,0,1,4
+6,07,Oppegård,PSV,Defender,96,50,48,0,0,0,0,1
+7,08,Høibråten,Bodø/Glimt,Defender,95.7,487,461,0,0,0,8,6
+8,09,Edgar_González,Betis,Midfielder,95,180,172,0,0,0,1,3
+9,09,Moe,Bodø/Glimt,Defender,95,148,137,0,0,0,0,3
+10,11,Víctor_Ruiz,Betis,Defender,94.7,151,144,0,0,0,1,3
+11,12,Saliba,Arsenal,Defender,94.5,180,170,0,0,0,4,2
+12,13,Mario_Gila,Lazio,Defender,94.4,306,289,100,1,1,5,5
+13,14,Marcos_Antônio,Lazio,Midfielder,94.3,122,116,0,0,0,2,3
+14,15,Tait,Rennes,Forward,94.2,235,221,50,2,1,10,6

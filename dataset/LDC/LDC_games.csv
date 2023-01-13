@@ -1,0 +1,97 @@
+,date,equipe_dom,score_dom,score_ext,equipe_ext
+0,02.11. 21:00,AC Milan,4,0,Salzburg
+1,02.11. 21:00,Chelsea,2,1,D. Zagreb
+2,02.11. 21:00,FC Copenhagen,1,1,Dortmund
+3,02.11. 21:00,Juventus,1,2,Paris SG
+4,02.11. 21:00,Maccabi Haifa,1,6,Benfica
+5,02.11. 21:00,Manchester City,3,1,Sevilla
+6,02.11. 18:45,Real Madrid,5,1,Celtic
+7,02.11. 18:45,Shakhtar Donetsk,0,4,RB Leipzig
+8,01.11. 21:00,Bayern Munich,2,0,Inter
+9,01.11. 21:00,Liverpool,2,0,Napoli
+10,01.11. 21:00,Marseille,1,2,Tottenham
+11,01.11. 21:00,Plzen,2,4,Barcelona
+12,01.11. 21:00,Rangers,1,3,Ajax
+13,01.11. 21:00,Sporting CP,1,2,Eintracht Frankfurt
+14,01.11. 18:45,Bayer Leverkusen,0,0,Club Brugge KV
+15,01.11. 18:45,FC Porto,2,1,Atl. Madrid
+16,26.10. 21:00,Ajax,0,3,Liverpool
+17,26.10. 21:00,Atl. Madrid,2,2,Bayer Leverkusen
+18,26.10. 21:00,Barcelona,0,3,Bayern Munich
+19,26.10. 21:00,Eintracht Frankfurt,2,1,Marseille
+20,26.10. 21:00,Napoli,3,0,Rangers
+21,26.10. 21:00,Tottenham,1,1,Sporting CP
+22,26.10. 18:45,Club Brugge KV,0,4,FC Porto
+23,26.10. 18:45,Inter,4,0,Plzen
+24,25.10. 21:00,Benfica,4,3,Juventus
+25,25.10. 21:00,Celtic,1,1,Shakhtar Donetsk
+26,25.10. 21:00,D. Zagreb,0,4,AC Milan
+27,25.10. 21:00,Dortmund,0,0,Manchester City
+28,25.10. 21:00,Paris SG,7,2,Maccabi Haifa
+29,25.10. 21:00,RB Leipzig,3,2,Real Madrid
+30,25.10. 18:45,Salzburg,1,2,Chelsea
+31,25.10. 18:45,Sevilla,3,0,FC Copenhagen
+32,12.10. 21:00,Barcelona,3,3,Inter
+33,12.10. 21:00,Bayer Leverkusen,0,3,FC Porto
+34,12.10. 21:00,Plzen,2,4,Bayern Munich
+35,12.10. 21:00,Rangers,1,7,Liverpool
+36,12.10. 21:00,Sporting CP,0,2,Marseille
+37,12.10. 21:00,Tottenham,3,2,Eintracht Frankfurt
+38,12.10. 18:45,Atl. Madrid,0,0,Club Brugge KV
+39,12.10. 18:45,Napoli,4,2,Ajax
+40,11.10. 21:00,AC Milan,0,2,Chelsea
+41,11.10. 21:00,Celtic,0,2,RB Leipzig
+42,11.10. 21:00,D. Zagreb,1,1,Salzburg
+43,11.10. 21:00,Dortmund,1,1,Sevilla
+44,11.10. 21:00,Paris SG,1,1,Benfica
+45,11.10. 21:00,Shakhtar Donetsk,1,1,Real Madrid
+46,11.10. 18:45,FC Copenhagen,0,0,Manchester City
+47,11.10. 18:45,Maccabi Haifa,2,0,Juventus
+48,05.10. 21:00,Benfica,1,1,Paris SG
+49,05.10. 21:00,Chelsea,3,0,AC Milan
+50,05.10. 21:00,Juventus,3,1,Maccabi Haifa
+51,05.10. 21:00,Manchester City,5,0,FC Copenhagen
+52,05.10. 21:00,Real Madrid,2,1,Shakhtar Donetsk
+53,05.10. 21:00,Sevilla,1,4,Dortmund
+54,05.10. 18:45,RB Leipzig,3,1,Celtic
+55,05.10. 18:45,Salzburg,1,0,D. Zagreb
+56,04.10. 21:00,Ajax,1,6,Napoli
+57,04.10. 21:00,Club Brugge KV,2,0,Atl. Madrid
+58,04.10. 21:00,Eintracht Frankfurt,0,0,Tottenham
+59,04.10. 21:00,FC Porto,2,0,Bayer Leverkusen
+60,04.10. 21:00,Inter,1,0,Barcelona
+61,04.10. 21:00,Liverpool,2,0,Rangers
+62,04.10. 18:45,Bayern Munich,5,0,Plzen
+63,04.10. 18:45,Marseille,4,1,Sporting CP
+64,14.09. 21:00,Chelsea,1,1,Salzburg
+65,14.09. 21:00,FC Copenhagen,0,0,Sevilla
+66,14.09. 21:00,Juventus,1,2,Benfica
+67,14.09. 21:00,Maccabi Haifa,1,3,Paris SG
+68,14.09. 21:00,Manchester City,2,1,Dortmund
+69,14.09. 21:00,Rangers,0,3,Napoli
+70,14.09. 21:00,Real Madrid,2,0,RB Leipzig
+71,14.09. 18:45,AC Milan,3,1,D. Zagreb
+72,14.09. 18:45,Shakhtar Donetsk,1,1,Celtic
+73,13.09. 21:00,Bayer Leverkusen,2,0,Atl. Madrid
+74,13.09. 21:00,Bayern Munich,2,0,Barcelona
+75,13.09. 21:00,FC Porto,0,4,Club Brugge KV
+76,13.09. 21:00,Liverpool,2,1,Ajax
+77,13.09. 21:00,Marseille,0,1,Eintracht Frankfurt
+78,13.09. 18:45,Plzen,0,2,Inter
+79,13.09. 18:45,Sporting CP,2,0,Tottenham
+80,07.09. 21:00,Atl. Madrid,2,1,FC Porto
+81,07.09. 21:00,Barcelona,5,1,Plzen
+82,07.09. 21:00,Club Brugge KV,1,0,Bayer Leverkusen
+83,07.09. 21:00,Inter,0,2,Bayern Munich
+84,07.09. 21:00,Napoli,4,1,Liverpool
+85,07.09. 21:00,Tottenham,2,0,Marseille
+86,07.09. 18:45,Ajax,4,0,Rangers
+87,07.09. 18:45,Eintracht Frankfurt,0,3,Sporting CP
+88,06.09. 21:00,Benfica,2,0,Maccabi Haifa
+89,06.09. 21:00,Celtic,0,3,Real Madrid
+90,06.09. 21:00,Paris SG,2,1,Juventus
+91,06.09. 21:00,RB Leipzig,1,4,Shakhtar Donetsk
+92,06.09. 21:00,Salzburg,1,1,AC Milan
+93,06.09. 21:00,Sevilla,0,4,Manchester City
+94,06.09. 18:45,D. Zagreb,1,0,Chelsea
+95,06.09. 18:45,Dortmund,3,0,FC Copenhagen
