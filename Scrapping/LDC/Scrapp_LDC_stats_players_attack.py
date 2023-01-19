@@ -15,7 +15,7 @@ time.sleep(2)
 browser.maximize_window()
 time.sleep(2)
 
-cookies = browser.find_element_by_xpath('/html/body/div[6]/div[2]/div/div[1]/div/div[2]/div/button[3]')
+cookies = browser.find_element_by_xpath('/html/body/div[7]/div[2]/div/div[1]/div/div[2]/div/button[3]')
 cookies.click()
 time.sleep(2) 
 
@@ -48,7 +48,7 @@ df = df.replace({'Alexis Sánchez': "Alexis_Sánchez"}, regex=True)
 
 
 
-filepath = Path('C:/Users/diogo/OneDrive/Documents/GitHub/Projet-big-data/work/data/LDC/ucl_players_attack.csv')
+filepath = Path(r'dataset\LDC\ucl_players_attack.csv')
 filepath.parent.mkdir(parents=True, exist_ok=True)
 df.to_csv(filepath)
 print(df)

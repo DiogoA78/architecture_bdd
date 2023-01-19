@@ -1,16 +1,16 @@
-,Rank,Equipe,Country,Attack,Assist,Corner_taken,Offside,Dribble,Match_played
-0,01,Man_City,England,415,12,38,6,8,82
-1,02,Barcelona,Spain,398,11,40,6,8,107
-2,03,Real_Madrid,Spain,372,11,40,6,6,99
-3,04,Liverpool,England,349,14,46,6,12,83
-4,05,Marseille,France,336,6,30,6,26,89
-5,06,Chelsea,England,333,7,27,6,16,73
-6,07,Paris,France,317,13,29,6,14,127
-7,08,Atlético,Spain,309,5,39,6,20,83
-8,09,Bayern,Germany,305,17,19,6,17,91
-9,10,Juventus,Italy,283,8,27,6,17,80
-10,11,Leverkusen,Germany,278,4,31,6,13,82
-11,12,Benfica,Portugal,273,11,30,6,5,88
-12,13,Napoli,Italy,259,15,19,6,15,88
-13,14,Milan,Italy,257,7,24,6,13,82
-14,15,Salzburg,Austria,249,3,24,6,8,58
+,team
+0,01 Man_City England 415 12 38 8 82 6
+1,02 Barcelona Spain 398 11 40 8 107 6
+2,03 Real_Madrid Spain 372 11 40 6 99 6
+3,04 Liverpool England 349 14 46 12 83 6
+4,05 Marseille France 336 6 30 26 89 6
+5,06 Chelsea England 333 7 27 16 73 6
+6,07 Paris France 317 13 29 14 127 6
+7,08 Atlético Spain 309 5 39 20 83 6
+8,09 Bayern Germany 305 17 19 17 91 6
+9,10 Juventus Italy 283 8 27 17 80 6
+10,11 Leverkusen Germany 278 4 31 13 82 6
+11,12 Benfica Portugal 273 11 30 5 88 6
+12,13 Napoli Italy 259 15 19 15 88 6
+13,14 Milan Italy 257 7 24 13 82 6
+14,15 Salzburg Austria 249 3 24 8 58 6
