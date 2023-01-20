@@ -24,6 +24,9 @@ def insert_el_player(client):
     insert_tab = []
     for each in reader:
         insert_tab.append(each)
+        rank = each["Rank"]
+        each.pop("Rank")
+        each["_id"] = rank
     print(insert_tab)
     collections_name.insert_many(insert_tab)
 
