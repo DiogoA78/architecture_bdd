@@ -102,7 +102,7 @@ st.set_page_config(page_title="Dashboard Football", page_icon=":guardsman:", lay
 st.title("Gestion des équipes et joueurs de football avec Streamlit")
 
 # Utilisation des onglets
-onglets = ["Accueil", "LDC Clubs", "LDC Players", "EL Clubs", "EL Players"]
+onglets = ["Accueil", "LDC Clubs", "LDC Players", "EL Clubs", "EL Players", "Tweets LDC Clubs", "Tweets LDC Players", "Tweets EL Clubs", "Tweets EL Players"]
 onglet_actif = st.sidebar.selectbox("Sélectionnez un onglet", onglets)
 
 if onglet_actif == "Accueil":
@@ -340,3 +340,145 @@ elif onglet_actif == "EL Players":
     if st.button("Supprimer un joueur"):
         delete_document4(query)
         st.success("Joueur supprimé avec succès.")
+
+########################################### TWITTER ########################################
+######################## CNX BDD ########################
+
+# Connexion à la base de données pour la collection LDC CLUBS
+client = pymongo.MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/")
+db = client["Cluster0"]
+collection5 = db["Tweets-LDC-Clubs"]
+
+# Méthode de création
+def create_document5(data):
+    collection5.insert_one(data)
+    print("Document créé avec succès.")
+
+# Méthode de lecture
+def read_document5(query={}):
+    return collection5.find(query)
+
+# Méthode de mise à jour
+def update_document5(query, nouvelles_valeurs):
+    collection5.update_one(query, {"$set": nouvelles_valeurs})
+    print("Document mis à jour avec succès.")
+
+# Méthode de suppression
+def delete_document5(query):
+    collection5.delete_one(query)
+    print("Document supprimé avec succès.")
+
+# Connexion à la base de données pour la collection LDC PLAYERS
+collection6 = db["Tweets-LDC-Players"]
+
+# Méthode de création
+def create_document6(data):
+    collection6.insert_one(data)
+    print("Document créé avec succès.")
+
+# Méthode de lecture
+def read_document6(query={}):
+    return collection6.find(query)
+
+# Méthode de mise à jour
+def update_document6(query, nouvelles_valeurs):
+    collection6.update_one(query, {"$set": nouvelles_valeurs})
+    print("Document mis à jour avec succès.")
+
+# Méthode de suppression
+def delete_document6(query):
+    collection6.delete_one(query)
+    print("Document supprimé avec succès.")
+
+# Connexion à la base de données pour la collection EL CLUBS
+collection7 = db["Tweets-EL-Clubs"]
+
+# Méthode de création
+def create_document7(data):
+    collection7.insert_one(data)
+    print("Document créé avec succès.")
+
+# Méthode de lecture
+def read_document7(query={}):
+    return collection7.find(query)
+
+# Méthode de mise à jour
+def update_document7(query, nouvelles_valeurs):
+    collection7.update_one(query, {"$set": nouvelles_valeurs})
+    print("Document mis à jour avec succès.")
+
+# Méthode de suppression
+def delete_document7(query):
+    collection7.delete_one(query)
+    print("Document supprimé avec succès.")
+
+# Connexion à la base de données pour la collection EL PLAYERS
+collection8 = db["Tweets-EL-Players"]
+
+# Méthode de création
+def create_document8(data):
+    collection8.insert_one(data)
+    print("Document créé avec succès.")
+
+# Méthode de lecture
+def read_document8(query={}):
+    return collection8.find(query)
+
+# Méthode de mise à jour
+def update_document8(query, nouvelles_valeurs):
+    collection8.update_one(query, {"$set": nouvelles_valeurs})
+    print("Document mis à jour avec succès.")
+
+# Méthode de suppression
+def delete_document8(query):
+    collection8.delete_one(query)
+    print("Document supprimé avec succès.")
+
+if onglet_actif == "Tweets LDC Clubs":
+    clubs1 = ["PSG", "Manchester city", "Réal madrid", "Liverpool"]
+    tweet_counts = {}
+    like_counts = {}
+    for club in clubs1:
+        tweets = collection5.find({"text": club})
+        tweet_counts[club] = tweets.count()
+        like_count = 0
+        for tweet in tweets:
+            like_count += tweet["favorite_count"]
+    like_counts[club] = like_count
+
+
+elif onglet_actif == "Tweets LDC Players":
+    footballeurs1 = ["Messi", "Mbappé", "Kimmich", "De bruyne"]
+    tweet_counts = {}
+    like_counts = {}
+    for footballeurs in footballeurs1:
+        tweets = collection6.find({"text": footballeurs})
+        tweet_counts[footballeurs] = tweets.count()
+        like_count = 0
+        for tweet in tweets:
+            like_count += tweet["favorite_count"]
+        like_counts[footballeurs] = like_count
+
+elif onglet_actif == "Tweets EL Clubs":
+    clubs2  = ["Manchester United", "Monaco", "Arsenal"]
+    tweet_counts = {}
+    like_counts = {}
+    for club in clubs2:
+        tweets = collection7.find({"text": club})
+        tweet_counts[club] = tweets.count()
+        like_count = 0
+        for tweet in tweets:
+            like_count += tweet["favorite_count"]
+        like_counts[club] = like_count
+
+elif onglet_actif == "Tweets EL Players":
+    footballeurs2  = ["Gakpo", "Eriksen", "Blas", "Pellegrini"]
+    tweet_counts = {}
+    like_counts = {}
+    for footballeurs in footballeurs2:
+        tweets = collection7.find({"text": footballeurs})
+        tweet_counts[footballeurs] = tweets.count()
+        like_count = 0
+        for tweet in tweets:
+            like_count += tweet["favorite_count"]
+        like_counts[footballeurs] = like_count
