@@ -1,11 +1,10 @@
 import streamlit as st
 import pymongo
 
-
 ######################## CNX BDD ########################
 
 # Connexion à la base de données pour la collection LDC CLUBS
-client = pymongo.MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/")
+client = pymongo.MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=false&ssl_cert_reqs=CERT_NONE")
 db = client["Cluster0"]
 collection1 = db["LDC-Clubs"]
 
@@ -122,6 +121,7 @@ if onglet_actif == "Accueil":
 
     
 elif onglet_actif == "LDC Clubs":
+    st.write("Ajouter un club")
     # Bouton pour la méthode de création
     Rank = st.number_input("Entrer le rank:")
     Equipe = st.text_input("Entrer l'équipe:")
@@ -138,13 +138,18 @@ elif onglet_actif == "LDC Clubs":
         create_document1(data)
         st.success("Club ajouté avec succès.")
 
+    
     # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les données")
     if st.button("Lire les données"):
         query = {}
         documents = list(read_document1(query))
         st.json(documents)
 
     # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une Equipe")
     query = {"Equipe": st.text_input("Entrer le nom d'un club à mettre à jour:")}
     Rank = st.number_input("Entrer le nouveau rank:")
     Country = st.text_input("Entrer le nouveau pays:")
@@ -161,6 +166,8 @@ elif onglet_actif == "LDC Clubs":
         st.success("Equipe mise à jour avec succès.")
 
     # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un club")
     query = {"Equipe": st.text_input("Entrer le nom d'un club à supprimer:")}
     if st.button("Supprimer un club"):
         delete_document1(query)
@@ -176,6 +183,7 @@ elif onglet_actif == "LDC Players":
 
 
     # Bouton pour la méthode de création
+    st.write("Ajouter un joueur")
     Rank = st.number_input("Entrer le rank:")
     Nom = st.text_input("Entrer le nom du joueur:")
     Equipe = st.text_input("Entrer l'equipe:")
@@ -185,20 +193,23 @@ elif onglet_actif == "LDC Players":
     Offside = st.number_input("Entrer le nombre d'hors jeu:")
     Dribble= st.number_input("Entrer le nombre de dribble:")
     Match_played = st.number_input("Entrer le nombre de matchs joués:")
-
-    if st.button("Créer un document"):
+    if st.button("Ajouter un joueur"):
         data = {"Rank": Rank, "Nom": Nom, "Equipe": Equipe, "Poste": Poste, "Assist": Assist, "Corner_taken": Corner_taken, "Offside": Offside,"Dribble": Dribble,
         "Match_played": Match_played}
         create_document2(data)
         st.success("Document créé avec succès.")
 
     # Bouton pour la méthode de lecture
-    if st.button("Lire les documents"):
+    st.write("")
+    st.write("Lire les données")
+    if st.button("Lire les données"):
         query = {}
         documents = list(read_document2(query))
         st.json(documents)
 
     # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour un joueur")
     query = {"Nom": st.text_input("Entrer le nom du joueur à mettre à jour:")}
     Rank = st.number_input("Entrer le nouveau rank:")
     Equipe = st.text_input("Entrer la nouvelle equipe:")
@@ -215,6 +226,8 @@ elif onglet_actif == "LDC Players":
         st.success("Joueur mis à jour avec succès.")
 
     # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un joueur")
     query = {"Nom": st.text_input("Entrer le nom d'un joueur à supprimer:")}
     if st.button("Supprimer un joueur"):
         delete_document2(query)
@@ -223,13 +236,11 @@ elif onglet_actif == "LDC Players":
 
 ######################## EL CLUBS ########################
 elif onglet_actif == "EL Clubs":
-    
-
-
     # Utilisation des méthodes CRUD définies précédemment pour la collection EL CLUBS
 
 
     # Bouton pour la méthode de création
+    st.write("Ajouter une équipe")
     Rank = st.number_input("Entrer le rank:")
     Equipe = st.text_input("Entrer l'équipe:")
     Country = st.text_input("Entrer le pays:")
@@ -238,20 +249,23 @@ elif onglet_actif == "EL Clubs":
     Corner_taken = st.number_input("Entrer le nombre de corner:")
     Offside = st.number_input("Entrer le nombre d'hors jeu:")
     Match_played = st.number_input("Entrer le nombre de matchs joués:")
-
-    if st.button("Ajouter une equipe"):
+    if st.button("Ajouter une équipe"):
         data = {"Rank": Rank, "Equipe": Equipe, "Country": Country, "Attack": Attack, "Assist": Assist, "Corner_taken": Corner_taken, "Offside": Offside,
         "Match_played": Match_played}
         create_document3(data)
         st.success("Equipe ajouté avec succès.")
 
     # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("ALire les données")
     if st.button("Lire les données"):
         query = {}
         documents = list(read_document3(query))
         st.json(documents)
 
     # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une équipe")
     query = {"Equipe": st.text_input("Entrer le nom de l'équipe à mettre à jour:")}
     Rank = st.number_input("Entrer nouveau le rank:")
     Country = st.text_input("Entrer le nouveau pays:")
@@ -267,6 +281,8 @@ elif onglet_actif == "EL Clubs":
         st.success("Equipe mise à jour avec succès.")
 
     # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un joueur")
     query = {"Equipe": st.text_input("Entrer le nom de l'equipe à supprimer:")}
     if st.button("Supprimer une equipe"):
         delete_document3(query)
@@ -275,14 +291,11 @@ elif onglet_actif == "EL Clubs":
 
 ######################## EL PLAYERS ########################
 elif onglet_actif == "EL Players":
-    
-
-
-
     # Utilisation des méthodes CRUD définies précédemment pour la collection EL PLAYERS
 
 
     # Bouton pour la méthode de création
+    st.write("Ajouter un joueur")
     Rank = st.number_input("Entrer le rank:")
     Nom = st.text_input("Entrer le nom du joueur:")
     Equipe = st.text_input("Entrer l'equipe:")
@@ -291,21 +304,23 @@ elif onglet_actif == "EL Players":
     Corner_taken = st.number_input("Entrer le nombre de corner:")
     Offside = st.number_input("Entrer le nombre d'hors jeu:")
     Match_played = st.number_input("Entrer le nombre de matchs joués:")
-    
     if st.button("Ajouter un joueur"):
-
         data = {"Rank": Rank, "Equipe": Equipe, "Poste": Poste, "Assist": Assist, "Corner_taken": Corner_taken, "Offside": Offside,
         "Match_played": Match_played}
         create_document4(data)
         st.success("Joueur ajouté avec succès.")
 
     # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les données")
     if st.button("Lire les données"):
         query = {}
         documents = list(read_document4(query))
         st.json(documents)
 
     # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour un joueur")
     query = {"Nom": st.text_input("Entrer le nom du joueur à mettre à jour:")}
     Rank = st.number_input("Entrer le nouveau rank:")
     Equipe = st.text_input("Entrer la nouvelle equipe :")
@@ -321,6 +336,8 @@ elif onglet_actif == "EL Players":
         st.success("Joueur mis à jour avec succès.")
 
     # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un joueur")
     query = {"Nom": st.text_input("Entrer le nom d'un joueur à supprimer:")}
     if st.button("Supprimer un joueur"):
         delete_document4(query)
