@@ -13,7 +13,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # Connectez-vous à la base de données MongoDB
-client = MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE")
+client = MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/")
 db = client["Cluster0"]
 tweets_collection = db["Tweets-LDC-Players"]
 
