@@ -12,7 +12,7 @@ access_token_secret = "Q8BKW3lhQBEhyo9S4laNeP2dKa7JNxSvgi5pxc9qot464"
 # Autorisez l'accès à l'API Twitter
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
+api = API(auth)
 
 # Connectez-vous à la base de données MongoDB
 client = MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/")

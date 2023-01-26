@@ -3,18 +3,18 @@ import pandas as pd
 import csv
 
 def get_database():
-    CONNECTION_STRING = "mongodb+srv://diogoalmeida:BwgYhimlAtpzLT45@projetbdd.uzkeroj.mongodb.net/?retryWrites=true&w=majority&ssl=false"
+    CONNECTION_STRING = "mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE"
     client = MongoClient(CONNECTION_STRING)
     return client
 
 
 def create_db_collection(client):
-    db = client['Projetbdd']
+    db = client['Cluster0']
     collections_name = db["LDC-Players"]
     return collections_name
 
 def insert_csv(client):
-    db = client['Projetbdd']
+    db = client['Cluster0']
     collections_name = db["LDC-Players"]
     csvfile = open(r'dataset\LDC\ucl_players_attack.csv', 'r')
     reader = csv.DictReader(csvfile)
