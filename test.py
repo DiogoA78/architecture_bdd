@@ -435,50 +435,159 @@ def delete_document8(query):
     print("Document supprimé avec succès.")
 
 if onglet_actif == "Tweets LDC Clubs":
-    clubs1 = ["PSG", "Manchester city", "Réal madrid", "Liverpool"]
-    tweet_counts = {}
-    like_counts = {}
-    for club in clubs1:
-        tweets = collection5.find({"text": club})
-        tweet_counts[club] = tweets.count()
-        like_count = 0
-        for tweet in tweets:
-            like_count += tweet["favorite_count"]
-    like_counts[club] = like_count
+    st.write("Ajouter un tweet")
+    # Bouton pour la méthode de création
+    text = st.text_input("Entrer le tweet:")
+    user = st.text_input("Entrer un utilisateur:")
+    likes = st.number_input("Entrer le nombre de likes:")
+    if st.button("Ajouter un tweet"):
+        data = {"text": text, "user": user, "likes": likes}
+        create_document1(data)
+        st.success("Tweet ajouté avec succès.")
+
+    # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les tweets")
+    if st.button("Lire les tweets"):
+        query = {}
+        documents = list(read_document1(query))
+        st.json(documents)
+
+        # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    text = st.text_input("Entrer le nouveau tweet:")
+    likes = st.number_input("Entrer le nouveau nombre de like:")
+
+    nouvelles_valeurs = {"text": text, "likes": likes}
+    if st.button("Mettre à jour un tweet"):
+        update_document1(query, nouvelles_valeurs)
+        st.success("Tweet mise à jour avec succès.")
+
+    # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    if st.button("Supprimer un tweet"):
+        delete_document1(query)
+        st.success("tweet supprimé avec succès.")
 
 
 elif onglet_actif == "Tweets LDC Players":
-    footballeurs1 = ["Messi", "Mbappé", "Kimmich", "De bruyne"]
-    tweet_counts = {}
-    like_counts = {}
-    for footballeurs in footballeurs1:
-        tweets = collection6.find({"text": footballeurs})
-        tweet_counts[footballeurs] = tweets.count()
-        like_count = 0
-        for tweet in tweets:
-            like_count += tweet["favorite_count"]
-        like_counts[footballeurs] = like_count
+    st.write("Ajouter un tweet")
+    # Bouton pour la méthode de création
+    text = st.text_input("Entrer le tweet:")
+    user = st.text_input("Entrer un utilisateur:")
+    likes = st.number_input("Entrer le nombre de likes:")
+    if st.button("Ajouter un tweet"):
+        data = {"text": text, "user": user, "likes": likes}
+        create_document1(data)
+        st.success("Tweet ajouté avec succès.")
+
+    # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les tweets")
+    if st.button("Lire les tweets"):
+        query = {}
+        documents = list(read_document1(query))
+        st.json(documents)
+
+        # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    text = st.text_input("Entrer le nouveau tweet:")
+    likes = st.number_input("Entrer le nouveau nombre de like:")
+
+    nouvelles_valeurs = {"text": text, "likes": likes}
+    if st.button("Mettre à jour un tweet"):
+        update_document1(query, nouvelles_valeurs)
+        st.success("Tweet mise à jour avec succès.")
+
+    # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    if st.button("Supprimer un tweet"):
+        delete_document1(query)
+        st.success("tweet supprimé avec succès.")
 
 elif onglet_actif == "Tweets EL Clubs":
-    clubs2  = ["Manchester United", "Monaco", "Arsenal"]
-    tweet_counts = {}
-    like_counts = {}
-    for club in clubs2:
-        tweets = collection7.find({"text": club})
-        tweet_counts[club] = tweets.count()
-        like_count = 0
-        for tweet in tweets:
-            like_count += tweet["favorite_count"]
-        like_counts[club] = like_count
+    st.write("Ajouter un tweet")
+    # Bouton pour la méthode de création
+    text = st.text_input("Entrer le tweet:")
+    user = st.text_input("Entrer un utilisateur:")
+    likes = st.number_input("Entrer le nombre de likes:")
+    if st.button("Ajouter un tweet"):
+        data = {"text": text, "user": user, "likes": likes}
+        create_document1(data)
+        st.success("Tweet ajouté avec succès.")
+
+    # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les tweets")
+    if st.button("Lire les tweets"):
+        query = {}
+        documents = list(read_document1(query))
+        st.json(documents)
+
+        # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    text = st.text_input("Entrer le nouveau tweet:")
+    likes = st.number_input("Entrer le nouveau nombre de like:")
+
+    nouvelles_valeurs = {"text": text, "likes": likes}
+    if st.button("Mettre à jour un tweet"):
+        update_document1(query, nouvelles_valeurs)
+        st.success("Tweet mise à jour avec succès.")
+
+    # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    if st.button("Supprimer un tweet"):
+        delete_document1(query)
+        st.success("tweet supprimé avec succès.")
+
 
 elif onglet_actif == "Tweets EL Players":
-    footballeurs2  = ["Gakpo", "Eriksen", "Blas", "Pellegrini"]
-    tweet_counts = {}
-    like_counts = {}
-    for footballeurs in footballeurs2:
-        tweets = collection7.find({"text": footballeurs})
-        tweet_counts[footballeurs] = tweets.count()
-        like_count = 0
-        for tweet in tweets:
-            like_count += tweet["favorite_count"]
-        like_counts[footballeurs] = like_count
+    st.write("Ajouter un tweet")
+    # Bouton pour la méthode de création
+    text = st.text_input("Entrer le tweet:")
+    user = st.text_input("Entrer un utilisateur:")
+    likes = st.number_input("Entrer le nombre de likes:")
+    if st.button("Ajouter un tweet"):
+        data = {"text": text, "user": user, "likes": likes}
+        create_document1(data)
+        st.success("Tweet ajouté avec succès.")
+
+    # Bouton pour la méthode de lecture
+    st.write("")
+    st.write("Lire les tweets")
+    if st.button("Lire les tweets"):
+        query = {}
+        documents = list(read_document1(query))
+        st.json(documents)
+
+        # Bouton pour la méthode de mise à jour
+    st.write("")
+    st.write("Mettre à jour une tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    text = st.text_input("Entrer le nouveau tweet:")
+    likes = st.number_input("Entrer le nouveau nombre de like:")
+
+    nouvelles_valeurs = {"text": text, "likes": likes}
+    if st.button("Mettre à jour un tweet"):
+        update_document1(query, nouvelles_valeurs)
+        st.success("Tweet mise à jour avec succès.")
+
+    # Bouton pour la méthode de suppression
+    st.write("")
+    st.write("Supprimer un tweet")
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    if st.button("Supprimer un tweet"):
+        delete_document1(query)
+        st.success("tweet supprimé avec succès.")

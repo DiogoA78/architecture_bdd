@@ -26,4 +26,5 @@ for footballeur in footballeurs:
     query = footballeur
     tweets = tweepy.Cursor(api.search_tweets,q=query,lang="fr").items(100)
     for tweet in tweets:
-        tweets_collection.insert_one(tweet._json)
+        if not tweet.text.startswith("RT"):
+            tweets_collection.insert_one({"text": tweet.text, "user": tweet.user.screen_name,"likes": tweet.favorite_count})
