@@ -4,12 +4,9 @@ import csv
 
 
 def get_database():
-    CONNECTION_STRING = "mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE"
+    CONNECTION_STRING = "mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?"
     client = MongoClient(CONNECTION_STRING)
     return client
-
-
-
 
 def create_db_collection_EL_Clubs(client):
     db = client['Cluster0']
@@ -20,7 +17,7 @@ def create_db_collection_EL_Clubs(client):
 def insert_el_club(client):
     db = client['Cluster0']
     collections_name = db["EL-Clubs"]
-    csvfile = open(r'dataset\EL\el_stats_clubs_attack.csv', 'r')
+    csvfile = open(r'../dataset/EL/el_stats_clubs_attack.csv', 'r')
     reader = csv.DictReader(csvfile)
     insert_tab = []
     for each in reader:

@@ -22,12 +22,8 @@ footballeurs = ["Manchester United", "Monaco", "Arsenal"]
 
 # Récupérez les tweets contenant les noms des footballeurs et stockez-les dans la base de données
 
-query = footballeurs
-tweets = tweepy.Cursor(api.search,
-                q=query,
-                lang="fr",
-                since="2022-09-08",
-                until="2022-11-03").items(3000)
-                
-for tweet in tweets:
-    tweets_collection.insert_one(tweet._json)
+for footballeur in footballeurs:
+    query = footballeur
+    tweets = tweepy.Cursor(api.search_tweets,q=query,lang="fr").items(100)
+    for tweet in tweets:
+        tweets_collection.insert_one(tweet._json)

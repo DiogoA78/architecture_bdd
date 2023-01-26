@@ -4,7 +4,7 @@ import pymongo
 ######################## CNX BDD ########################
 
 # Connexion à la base de données pour la collection LDC CLUBS
-client = pymongo.MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=false&ssl_cert_reqs=CERT_NONE")
+client = pymongo.MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/")
 db = client["Cluster0"]
 collection1 = db["LDC-Clubs"]
 

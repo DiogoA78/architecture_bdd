@@ -18,15 +18,11 @@ db = client["Cluster0"]
 tweets_collection = db["Tweets-LDC-Clubs"]
 
 # Définissez les noms des footballeurs à rechercher
-clubs = ["Paris", "Manchester city", "Réal madrid", "Liverpool"]
+clubs = ["Psg", "Manchester city", "Réal madrid", "Liverpool"]
 
 # Récupérez les tweets contenant les noms des footballeurs et stockez-les dans la base de données
-for club in clubs:
-    query = club
-    tweets = tweepy.Cursor(api.search,
-                  q=query,
-                  lang="fr",
-                  since="2022-09-06",
-                  until="2022-11-02").items(3000)
+for clubs in clubs:
+    query = clubs + " since:2022-09-08"
+    tweets = tweepy.Cursor(api.search_tweets,q=query,lang="fr").items(100)
     for tweet in tweets:
         tweets_collection.insert_one(tweet._json)
