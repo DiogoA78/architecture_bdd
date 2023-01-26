@@ -18,7 +18,7 @@ db = client["Cluster0"]
 tweets_collection = db["Tweets-LDC-Clubs"]
 
 # Définir les noms des clubs à rechercher
-clubs = ["Psg", "Manchester city", "Réal madrid", "Liverpool"]
+clubs = ["PSG", "Manchester City", "Real Madrid", "Liverpool"]
 
 # Récupérez les tweets contenant les noms des clubs et les stocker dans la bdd
 for clubs in clubs:

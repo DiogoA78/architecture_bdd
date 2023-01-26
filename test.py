@@ -1,5 +1,6 @@
 import streamlit as st
 import pymongo
+import pandas as pd
 
 ######################## CNX BDD ########################
 
@@ -473,6 +474,22 @@ if onglet_actif == "Tweets LDC Clubs":
         delete_document5(query)
         st.success("Tweet supprimé avec succès.")
 
+    st.write("")
+    st.write("Compter")
+    keyword1 = "PSG"
+    keyword2 = "Manchester City"
+    keyword3 = "Real Madrid"
+    keyword4 = "Liverpool"
+    
+    tweet_count1 = collection5.count_documents({"text": {"$regex": keyword1}})
+    tweet_count2 = collection5.count_documents({"text": {"$regex": keyword2}})
+    tweet_count3 = collection5.count_documents({"text": {"$regex": keyword3}})
+    tweet_count4 = collection5.count_documents({"text": {"$regex": keyword4}})
+ 
+    data = {'clubs': ['PSG', 'Manchester City', 'Real Madrid', "Liverpool"], 'Nb_tweets': [tweet_count1,tweet_count2,tweet_count3,tweet_count4]}
+    df = pd.DataFrame(data)
+    df = df.set_index('clubs')
+    st.bar_chart(df)
 
 elif onglet_actif == "Tweets LDC Players":
     st.write("Ajouter un tweet")
@@ -512,6 +529,24 @@ elif onglet_actif == "Tweets LDC Players":
     if st.button("Supprimer un tweet"):
         delete_document6(query)
         st.success("Tweet supprimé avec succès.")
+        
+        
+    st.write("")
+    st.write("Compter")
+    keyword1 = "Messi"
+    keyword2 = "Mbappé"
+    keyword3 = "Kimmich"
+    keyword4 = "De Bruyne"
+    
+    tweet_count1 = collection6.count_documents({"text": {"$regex": keyword1}})
+    tweet_count2 = collection6.count_documents({"text": {"$regex": keyword2}})
+    tweet_count3 = collection6.count_documents({"text": {"$regex": keyword3}})
+    tweet_count4 = collection6.count_documents({"text": {"$regex": keyword4}})
+ 
+    data = {'nom': ['Messi', 'Mbappé', 'Kimmich', "De Bruyne"], 'Nb_tweets': [tweet_count1,tweet_count2,tweet_count3,tweet_count4]}
+    df = pd.DataFrame(data)
+    df = df.set_index('nom')
+    st.bar_chart(df)
 
 elif onglet_actif == "Tweets EL Clubs":
     st.write("Ajouter un tweet")
@@ -551,7 +586,22 @@ elif onglet_actif == "Tweets EL Clubs":
     if st.button("Supprimer un tweet"):
         delete_document7(query)
         st.success("Tweet supprimé avec succès.")
+    
+    st.write("")
+    st.write("Compter")
+    keyword1 = "Manchester United"
+    keyword2 = "Monaco"
+    keyword3 = "Arsenal"
 
+    tweet_count1 = collection7.count_documents({"text": {"$regex": keyword1}})
+    tweet_count2 = collection7.count_documents({"text": {"$regex": keyword2}})
+    tweet_count3 = collection7.count_documents({"text": {"$regex": keyword3}})
+ 
+
+    data = {'clubs': ['Manchester United','Monaco', "Arsenal"], 'Nb_tweets': [tweet_count1,tweet_count2,tweet_count3]}
+    df = pd.DataFrame(data)
+    df = df.set_index('clubs')
+    st.bar_chart(df)
 
 elif onglet_actif == "Tweets EL Players":
     st.write("Ajouter un tweet")
@@ -598,12 +648,12 @@ elif onglet_actif == "Tweets EL Players":
     keyword2 = "Eriksen"
     keyword3 = "Blas"
     keyword4 = "Pellegrini"
-    tweet_count1 = collection8.find({"text": {"$regex": keyword1}}).count()
-    tweet_count2 = collection8.find({"text": {"$regex": keyword2}}).count()
-    tweet_count3 = collection8.find({"text": {"$regex": keyword3}}).count()
-    tweet_count4 = collection8.find({"text": {"$regex": keyword4}}).count()
+    tweet_count1 = collection8.count_documents({"text": {"$regex": keyword1}})
+    tweet_count2 = collection8.count_documents({"text": {"$regex": keyword2}})
+    tweet_count3 = collection8.count_documents({"text": {"$regex": keyword3}})
+    tweet_count4 = collection8.count_documents({"text": {"$regex": keyword4}})
 
-    st.write("Nombre de tweets contenant le mot 'Gakpo':", tweet_count1)
-    st.write("Nombre de tweets contenant le mot 'Eriksen':", tweet_count2)
-    st.write("Nombre de tweets contenant le mot 'Blas':", tweet_count3)
-    st.write("Nombre de tweets contenant le mot 'Pellegrini':", tweet_count4)
+    data = {'nom': ['Gakpo', 'Erisken', 'Blas', "Pellegrini"], 'Nb_tweets': [tweet_count1,tweet_count2,tweet_count3,tweet_count4]}
+    df = pd.DataFrame(data)
+    df = df.set_index('nom')
+    st.bar_chart(df)

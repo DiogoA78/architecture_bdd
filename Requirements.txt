@@ -1,0 +1,12 @@
+"
+
+
+streamlit==1.9.0
+Selenium==4.2.0
+pandas==1.4.1
+pymngo==4.3.3
+tweepy==4.12.1
+
+
+
+"
