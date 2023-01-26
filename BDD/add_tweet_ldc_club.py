@@ -1,12 +1,11 @@
 import tweepy
 from pymongo import MongoClient
-import matplotlib.pyplot as plt
 
 # Ajoutez vos clés d'accès
-consumer_key = "6d4gHuasY9Kfy312WyJsc7Ydf"
-consumer_secret = "dQt3YyiMVVXer9uVmTabYA1j4ryBT5d9I4tDBZqkD4Z2G6mxfD"
-access_token = "1137234111783997440-wryTsHX4OgIC06RreXnI16xKMAb4YF"
-access_token_secret = "Q8BKW3lhQBEhyo9S4laNeP2dKa7JNxSvgi5pxc9qot464"
+consumer_key = "H8qzKivjZxiGaJIdCxFr3QX49"
+consumer_secret = "NKQgoaIFONVeSEwXuE4aNabVuqF3wW5QByPJFFoy9UkoQmtBkV"
+access_token = "1588115651989848066-tN1jcTK3lcHFEjVJ99VKOc9zITndRv"
+access_token_secret = "Ek58DFJLvJWh6xWNurmH4gZSiKxVEALVL55bZb3wIwMeR"
 
 # Autorisez l'accès à l'API Twitter
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -16,7 +15,7 @@ api = tweepy.API(auth)
 # Connectez-vous à la base de données MongoDB
 client = MongoClient("mongodb+srv://Aroune:root@cluster0.cl9j9un.mongodb.net/?ssl=true&ssl_cert_reqs=CERT_NONE")
 db = client["Cluster0"]
-tweets_collection = db["Tweets-LDC-Players"]
+tweets_collection = db["Tweets-LDC-Clubs"]
 
 # Définissez les noms des footballeurs à rechercher
 clubs = ["Paris", "Manchester city", "Réal madrid", "Liverpool"]

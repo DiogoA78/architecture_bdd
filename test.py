@@ -109,8 +109,6 @@ if onglet_actif == "Accueil":
     col1, col2, col3 = st.columns([7,10,7])
     with col2:
         st.write("Nous avons le plaisir de vous accueillir sur notre Dashboard !")
-        st.write("Sélectionnez l'une des trois meilleurs compétitions de football :soccer:  pour avoir accès à l'historique des rencontres des groupes mais aussi avoir accès \
-                aux différentes stats des joueurs et des clubs.")
     
     col1, col2, col3 = st.columns([7,4,7])
     with col2:
@@ -145,7 +143,7 @@ elif onglet_actif == "LDC Clubs":
     if st.button("Lire les données"):
         query = {}
         documents = list(read_document1(query))
-        st.json(documents)
+        st.json(documents)    
 
     # Bouton pour la méthode de mise à jour
     st.write("")
