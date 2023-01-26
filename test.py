@@ -453,10 +453,10 @@ if onglet_actif == "Tweets LDC Clubs":
         documents = list(read_document5(query))
         st.json(documents)
 
-        # Bouton pour la méthode de mise à jour
+    # Bouton pour la méthode de mise à jour
     st.write("")
     st.write("Mettre à jour une tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur  dont le tweet est à mettre à jour:")}
     text = st.text_input("Entrer le nouveau tweet:")
     likes = st.number_input("Entrer le nouveau nombre de like:")
 
@@ -468,10 +468,10 @@ if onglet_actif == "Tweets LDC Clubs":
     # Bouton pour la méthode de suppression
     st.write("")
     st.write("Supprimer un tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur  dont le tweet est à supprimer:")}
     if st.button("Supprimer un tweet"):
         delete_document5(query)
-        st.success("tweet supprimé avec succès.")
+        st.success("Tweet supprimé avec succès.")
 
 
 elif onglet_actif == "Tweets LDC Players":
@@ -493,10 +493,10 @@ elif onglet_actif == "Tweets LDC Players":
         documents = list(read_document6(query))
         st.json(documents)
 
-        # Bouton pour la méthode de mise à jour
+    # Bouton pour la méthode de mise à jour
     st.write("")
     st.write("Mettre à jour une tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur  dont le tweet est à mettre à jour:")}
     text = st.text_input("Entrer le nouveau tweet:")
     likes = st.number_input("Entrer le nouveau nombre de like:")
 
@@ -508,10 +508,10 @@ elif onglet_actif == "Tweets LDC Players":
     # Bouton pour la méthode de suppression
     st.write("")
     st.write("Supprimer un tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur  dont le tweet est à supprimer:")}
     if st.button("Supprimer un tweet"):
         delete_document6(query)
-        st.success("tweet supprimé avec succès.")
+        st.success("Tweet supprimé avec succès.")
 
 elif onglet_actif == "Tweets EL Clubs":
     st.write("Ajouter un tweet")
@@ -535,7 +535,7 @@ elif onglet_actif == "Tweets EL Clubs":
         # Bouton pour la méthode de mise à jour
     st.write("")
     st.write("Mettre à jour une tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur  dont le tweet est à mettre à jour:")}
     text = st.text_input("Entrer le nouveau tweet:")
     likes = st.number_input("Entrer le nouveau nombre de like:")
 
@@ -547,10 +547,10 @@ elif onglet_actif == "Tweets EL Clubs":
     # Bouton pour la méthode de suppression
     st.write("")
     st.write("Supprimer un tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur dont le tweet est à supprimer:")}
     if st.button("Supprimer un tweet"):
         delete_document7(query)
-        st.success("tweet supprimé avec succès.")
+        st.success("Tweet supprimé avec succès.")
 
 
 elif onglet_actif == "Tweets EL Players":
@@ -572,10 +572,10 @@ elif onglet_actif == "Tweets EL Players":
         documents = list(read_document8(query))
         st.json(documents)
 
-        # Bouton pour la méthode de mise à jour
+    # Bouton pour la méthode de mise à jour
     st.write("")
     st.write("Mettre à jour une tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à mettre à jour:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur dont le tweet est à mettre à jour:")}
     text = st.text_input("Entrer le nouveau tweet:")
     likes = st.number_input("Entrer le nouveau nombre de like:")
 
@@ -587,7 +587,23 @@ elif onglet_actif == "Tweets EL Players":
     # Bouton pour la méthode de suppression
     st.write("")
     st.write("Supprimer un tweet")
-    query = {"user": st.text_input("Entrer le nom d'un utilisateur à supprimer:")}
+    query = {"user": st.text_input("Entrer le nom d'un utilisateur dont le tweet est à supprimer:")}
     if st.button("Supprimer un tweet"):
         delete_document8(query)
-        st.success("tweet supprimé avec succès.")
+        st.success("Tweet supprimé avec succès.")
+    
+    st.write("")
+    st.write("Compter")
+    keyword1 = "Gakpo"
+    keyword2 = "Eriksen"
+    keyword3 = "Blas"
+    keyword4 = "Pellegrini"
+    tweet_count1 = collection8.find({"text": {"$regex": keyword1}}).count()
+    tweet_count2 = collection8.find({"text": {"$regex": keyword2}}).count()
+    tweet_count3 = collection8.find({"text": {"$regex": keyword3}}).count()
+    tweet_count4 = collection8.find({"text": {"$regex": keyword4}}).count()
+
+    st.write("Nombre de tweets contenant le mot 'Gakpo':", tweet_count1)
+    st.write("Nombre de tweets contenant le mot 'Eriksen':", tweet_count2)
+    st.write("Nombre de tweets contenant le mot 'Blas':", tweet_count3)
+    st.write("Nombre de tweets contenant le mot 'Pellegrini':", tweet_count4)
